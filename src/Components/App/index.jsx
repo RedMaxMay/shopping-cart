@@ -73,7 +73,7 @@ function App() {
 
   return (
     <main>
-      <header>FakeStoreAPI-shop</header>
+      <header><a target='_blank' href="https://github.com/RedMaxMay/shopping-cart" rel="noreferrer">Link to GitHub</a></header>
       <h1>Shopping cart</h1>
 
       <form onSubmit={createProduct} className="add-product-form">
