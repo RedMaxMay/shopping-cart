@@ -1,24 +1,30 @@
 import React from "react";
 
-const Product = ({ product }) => {
+const Product = ({ product, increasePrice, decreasePrice, deleteProduct }) => {
   return (
     <div className="product">
       <img className="product__img" src={product.image} />
 
       <div className="product__info">
         <div className="product__price-wrap">
-            <p className="product__price">{product.price}</p>
-            <div className="product__counter-wrap">
-              <button className="product__counter-btn">-</button>
-              <input
-                type="number"
-                name=""
-                id=""
-                defaultValue='1'
-                className="product__counter-input"
-              />
-              <button className="product__counter-btn">+</button>
-            </div>
+          <p className="product__price">
+            {(product.price * product.counter).toFixed(2)}
+          </p>
+          <div className="product__counter-wrap">
+            <button
+              onClick={() => decreasePrice(product.id)}
+              className="product__counter-btn"
+            >
+              -
+            </button>
+            <p className="product__counter-input">{product.counter}</p>
+            <button
+              onClick={() => increasePrice(product.id)}
+              className="product__counter-btn"
+            >
+              +
+            </button>
+          </div>
         </div>
 
         <h5 className="product__title">{product.title}</h5>
@@ -36,6 +42,7 @@ const Product = ({ product }) => {
 
       <div className="product__delete-wrap">
         <svg
+          onClick={() => deleteProduct(product.id)}
           className="product__delete-icon"
           version="1.1"
           id="Capa_1"

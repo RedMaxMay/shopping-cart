@@ -156,7 +156,7 @@ header {
   font-weight: 400;
 }
 
-#root {
+main {
   align-self: stretch;
   flex: 1 1 auto;
   background-color: white;
@@ -364,7 +364,7 @@ input:focus:-ms-input-placeholder {
 
 footer {
   position: absolute;
-  bottom: -60px;
+  bottom: 0;
   left: 0;
   width: 100%;
   background-color: gray;
@@ -410,6 +410,9 @@ input[type="number"] {
 }
 
 .product__counter-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 45px;
   height: 35px;
   border: 1px solid rgb(13, 13, 113);

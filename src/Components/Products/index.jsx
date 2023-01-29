@@ -1,7 +1,6 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
-const Products = () => {
-  return <div></div>;
-};
+function Products() {}
 
 export default Products;
