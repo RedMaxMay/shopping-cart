@@ -426,6 +426,26 @@ input[type="number"] {
   margin-top: 20px;
 }
 
+.total {
+  background-color: rgb(232, 246, 255);
+  margin: 20px 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+}
+
+.total span {
+  font-weight: 500;
+  color: red;
+  margin-left: 10px;
+}
+
+.total__sum::after {
+  content: "$";
+  margin-left: 5px;
+}
+
 @media (max-width: 768px) {
   .product {
     flex-direction: column;
@@ -451,5 +471,16 @@ input[type="number"] {
     position: absolute;
     top: 15px;
     right: 15px;
+  }
+
+  .total {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .total p {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 ;
   }
 }

@@ -32,7 +32,13 @@ function App() {
     e.preventDefault();
     let id = e.target.id.value;
     if (id < 20 && id > 0) {
-      setProdId(id);
+      if (products.find((prod) => prod.id == id)) {
+        const target = products.find((prod) => prod.id == id);
+        target.counter++;
+        setProducts([...products]);
+      } else {
+        setProdId(id);
+      }
     } else {
       alert("To add a product write the ID number from 1 to 20!");
     }

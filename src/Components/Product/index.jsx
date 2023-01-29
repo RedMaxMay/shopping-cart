@@ -34,7 +34,7 @@ const Product = ({ product, increasePrice, decreasePrice, deleteProduct }) => {
             {product.category}
           </a>
           <p className="product__rating-wrap">
-            Rating:{" "}
+            Rating:
             <span className="product__rating-num">{product.rating.rate}</span>
           </p>
         </div>

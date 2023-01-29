@@ -10,6 +10,15 @@ const ShoppingCart = ({
   decreasePrice,
   deleteProduct,
 }) => {
+  const totalProducts = products.reduce(
+    (sum, item) => (sum += item.counter),
+    0
+  );
+  const totalPrice = products.reduce(
+    (sum, item) => (sum += item.price * item.counter),
+    0
+  );
+
   if (error) {
     return (
       <div>
@@ -43,6 +52,14 @@ const ShoppingCart = ({
               deleteProduct={deleteProduct}
             />
           ))}
+        </div>
+        <div className="total">
+          <p>
+            Total products: <span>{totalProducts} </span>
+          </p>
+          <p>
+            Grand total: <span className="total__sum">{totalPrice.toFixed(2)}</span>
+          </p>
         </div>
       </div>
     );
